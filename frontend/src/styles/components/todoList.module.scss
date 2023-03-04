@@ -1,0 +1,31 @@
+@use '../utils/functions' as f;
+@use '../utils/colors' as c;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+
+  p {
+    font-size: 18px;
+  }
+
+  svg {
+    margin-left: auto;
+    visibility: hidden;
+  }
+}
+
+.reorder {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.light {
+  color: f.getColor(c.$light-theme, darkGrayishBlue);
+}
+
+.dark {
+  color: f.getColor(c.$dark-theme, darkGrayishBlue);
+}

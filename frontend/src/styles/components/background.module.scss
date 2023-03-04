@@ -1,0 +1,32 @@
+@use '../utils/colors' as c;
+@use '../utils/functions' as f;
+
+
+.image {
+  img {
+    width: 100%;
+  }
+}
+
+.userDetails {
+  padding: 0 30px;
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+
+  h2 {
+    text-transform: capitalize;
+  }
+
+  p {
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+}
+

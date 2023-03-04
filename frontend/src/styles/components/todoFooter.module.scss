@@ -1,0 +1,80 @@
+@use '../utils/breakpoints' as b;
+@use '../utils/functions' as f;
+@use '../utils/colors' as c;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+
+  >p {
+    padding: 15px 0;
+    font-size: f.rem(14);
+
+    &:last-child {
+      cursor: pointer;
+    }
+  }
+}
+
+.dark {
+  background-color: f.getColor(c.$dark-theme, veryDarkSaturatedBlue);
+  color: f.getColor(c.$dark-theme, lightGrayishBlue);
+
+  .action, &.action {
+    background-color: f.getColor(c.$dark-theme, veryDarkSaturatedBlue);
+    color: f.getColor(c.$dark-theme, lightGrayishBlue);
+  }
+}
+
+.light {
+  background-color: f.getColor(c.$light-theme, veryLightGray);
+  color: f.getColor(c.$light-theme, darkGrayishBlue);
+
+  .action {
+    background-color: f.getColor(c.$light-theme, veryLightGray);
+    color: inherit;
+  }
+}
+
+
+.displayActionList .action{
+  display: none;
+
+  @include b.breakpoint-up(medium) {
+    display: flex;
+  }
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-weight: 700;
+  color: f.getColor(c.$light-theme, darkGrayishBlue);
+  font-size: 1rem;
+  background-color: white;
+  padding: 15px 0;
+  border-radius: 5px;
+  margin-top: 20px;
+
+  p {
+    font-size: f.rem(15);
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+    }
+  }
+  @include b.breakpoint-up(medium) {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.active {
+  color: f.getColor(c.$primary-color, brightBlue);
+}

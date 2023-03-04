@@ -1,0 +1,7 @@
+@use '../utils/functions' as f;
+
+.logo {
+  font-size: f.rem(40);
+  letter-spacing: f.rem(15);
+  color: #fff;
+}

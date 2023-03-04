@@ -1,0 +1,61 @@
+@use '../utils/functions' as f;
+.formContainer {
+  min-width: f.rem(300);
+  border-radius: f.rem(5);
+  border: f.rem(.5) solid rgba( 0, 0, 0, .1);
+  padding: f.rem(50);
+  text-align: center;
+  box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
+
+  h2 {
+    font-size: f.rem(40);
+    margin-bottom: f.rem(30);
+  }
+
+  form {
+    & > div {
+      display: flex;
+      flex-direction: column;
+      margin-top: f.rem(20);
+
+      & > input {
+        padding: f.rem(8);
+        background: transparent;
+        border: f.rem(1.2) solid black;
+        font: inherit;
+
+        &:focus {
+          outline: none;
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+
+}
+
+.signin {
+  width: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: f.rem(5);
+  font-weight: 700;
+
+  &:hover {
+    transform: scale(1.03);
+
+  } 
+}
+
+.register {
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

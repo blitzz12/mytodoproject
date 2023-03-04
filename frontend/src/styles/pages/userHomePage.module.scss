@@ -1,0 +1,16 @@
+@use '../utils/functions' as f;
+@use '../utils/colors' as c;
+
+.body {
+  height: 100vh;
+  position: relative;
+}
+
+.light {
+  background-color: f.getColor(c.$light-theme, veryLightGrayishBlue);
+}
+
+
+.dark {
+  background-color: f.getColor(c.$dark-theme, veryDarkBlue);
+}

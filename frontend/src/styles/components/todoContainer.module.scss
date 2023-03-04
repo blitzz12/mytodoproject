@@ -1,0 +1,134 @@
+@use '../utils/functions' as f;
+@use '../utils/colors' as c;
+
+
+.container {
+  max-width: f.rem(600);
+  margin: 0 auto;
+  padding-inline: f.rem(20);
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 13%;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: f.rem(40);
+
+    img {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .todo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: f.rem(25);
+    padding: f.rem(15) f.rem(20);
+    
+    input[type="text"] {
+      width: 100%;
+      border: none;
+      font-size: 18px;
+      font-family: inherit;
+      padding-top: f.rem(7);
+      color: inherit;
+      background-color: inherit;
+      &:focus {
+        outline: none;
+      }
+    }
+    svg {
+      cursor: pointer
+    }
+    &:hover {
+      svg {
+        visibility: visible;
+      }
+    }
+    border-bottom: f.rem(1) solid f.getColor(c.$light-theme, lightGrayishBlue);
+  }
+}
+
+.delete {
+  margin-left: auto;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.inputTodo {
+  margin-bottom: f.rem(20);
+  border-radius: f.rem(5);
+  border-bottom: none !important;
+}
+
+.roundCheckbox {
+  position: relative;
+  label {
+    background: transparent;
+    border: f.rem(1) solid f.getColor(c.$light-theme, lightGrayishBlue);
+    border-radius: 50%;
+    cursor: pointer;
+    height: f.rem(20);
+    width: f.rem(20);
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    &::after {
+      border: f.rem(3) solid #fff;
+      border-top: none;
+      border-right: none;
+      content: "";
+      height: f.rem(3);
+      left: f.rem(3);
+      opacity: 0;
+      position: absolute;
+      top: f.rem(5);
+      transform: rotate(-45deg);
+      width: f.rem(7);
+    }
+    
+  }
+  input {
+    visibility: hidden;
+
+    &:checked + label{
+      background-image: linear-gradient(to right,f.getColor(c.$primary-color, right-background-color),f.getColor(c.$primary-color, left-background-color));
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.light {
+  .todo {
+    background-color: f.getColor(c.$light-theme, veryLightGray);
+  }
+
+  .checked {
+    color: f.getColor(c.$light-theme, lightGrayishBlue);
+  }
+}
+
+.dark {
+  .todo, .inputTodo {
+    background-color: f.getColor(c.$dark-theme, veryDarkSaturatedBlue);
+    color: f.getColor(c.$dark-theme, lightGrayishBlueHover);
+  }
+
+  .checked {
+    color: f.getColor(c.$dark-theme, darkGrayishBlue);
+  }
+}
