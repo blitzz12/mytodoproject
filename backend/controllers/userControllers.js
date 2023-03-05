@@ -44,7 +44,7 @@ const userSignin = asyncHandler(async (req, res) => {
   const user = await User.findOne({email})
   
   if (!user) {
-    res.status(404)
+    res.status(400)
     throw new Error("User does not exist, please register")
   }
   
