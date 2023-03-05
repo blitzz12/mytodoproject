@@ -22,11 +22,7 @@
     "heroku": "^7.68.2",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^5.1.0",
-    "homepage": "https://myusername.github.io/my-app",
+    "homepage": "https://myusername.github.io",
     "mongoose": "^6.4.3"
-  },
-  "devDependencies": {
-    "concurrently": "^7.2.2",
-    "nodemon": "^2.0.19"
   }
 }
